@@ -90,16 +90,18 @@ public class pruebaConexion {
             
             consulta = conexion.createStatement();
             
-            resultado = consulta.executeQuery("SELECT MAX(precio) FROM productos");
+            //resultado = consulta.executeQuery("SELECT MAX(precio) FROM productos");
+
+            resultado = consulta.executeQuery("SELECT * FROM productos");
 
             while (resultado.next()) {
             
                 System.out.println(
-                        resultado.getString(1)
-//                        resultado.getString("CÓDIGOARTÍCULO") + "\t" +
-//                        resultado.getString("NOMBREARTÍCULO") + "\t" +
-//                        resultado.getString("PRECIO") + "\t" +
-//                        resultado.getString("PAÍSDEORIGEN")      
+//                        resultado.getString(1)
+                        resultado.getString("CÓDIGOARTÍCULO") + "\t" +
+                        resultado.getString("NOMBREARTÍCULO") + "\t" +
+                        resultado.getString("PRECIO") + "\t" +
+                        resultado.getString("PAÍSDEORIGEN")      
                         );
              }
         }
